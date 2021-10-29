@@ -1,7 +1,7 @@
 #!/usr/bin/env make
 
-REMOTE_REGISTRY = gcr.io/engineering-devops
-IMAGE_NAME = mjrtoolset
+REMOTE_REGISTRY = maxresfr
+IMAGE_NAME = debug
 TAG = $(shell cat VERSION)
 LOCAL_BUILD = $(IMAGE_NAME):$(TAG)
 REMOTE_IMAGE = $(REMOTE_REGISTRY)/$(LOCAL_BUILD)
@@ -16,5 +16,4 @@ build:
 	docker build -t $(LOCAL_BUILD) .
 
 all: tag
-	@echo "tools conatiner ready at $(REMOTE_IMAGE)"
-	@echo "docker run -it $(REMOTE_IMAGE) bash"
+	@echo "tools container ready at $(REMOTE_IMAGE)"
